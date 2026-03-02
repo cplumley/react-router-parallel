@@ -9,6 +9,13 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check
 
+  namespace :api do
+    resource :session, only: [:show, :create, :destroy]
+    resource :registration, only: [:create]
+    resource :password, only: [:create, :update]
+    resource :account, only: [:show, :update]
+  end
+
   get "app",       to: "spa#index"
   get "app/*path", to: "spa#index"
 
