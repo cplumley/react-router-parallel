@@ -19,7 +19,11 @@ class Api::SessionsController < Api::BaseController
   end
 
   def destroy
-    sign_out(current_user)
-    render json: { success: true }
+    if user_signed_in?
+      sign_out(current_user)
+      render json: { success: true }
+    else
+      render json: { error: "Not signed in" }, status: :unauthorized
+    end
   end
 end
