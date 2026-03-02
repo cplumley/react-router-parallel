@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     resource :registration, only: [:create]
     resource :password, only: [:create, :update]
-    resource :account, only: [:show, :update]
+    resource :account, only: [:show, :update, :destroy]
   end
 
   # Framework-mode SPA

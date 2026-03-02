@@ -14,6 +14,12 @@ class Api::AccountsController < Api::BaseController
     end
   end
 
+  def destroy
+    current_user.destroy
+    sign_out(current_user)
+    render json: { success: true }
+  end
+
   private
 
   def account_params

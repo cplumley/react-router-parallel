@@ -2,6 +2,7 @@
 @import "tailwindcss";
 
 @source "../../views/**/*.erb";
+@source "../data-spa/**/*.tsx";
 
 @theme {
   --font-display: 'Fraunces', serif;
