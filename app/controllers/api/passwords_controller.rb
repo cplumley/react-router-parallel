@@ -1,12 +1,7 @@
 class Api::PasswordsController < Api::BaseController
   def create
-    user = User.send_reset_password_instructions(email: params[:email])
-
-    if user.errors.empty?
-      render json: { success: true }
-    else
-      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
-    end
+    User.send_reset_password_instructions(email: params[:email])
+    render json: { success: true }
   end
 
   def update
