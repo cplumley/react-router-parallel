@@ -48,3 +48,5 @@ export function ForgotPassword() {
     </div>
   )
 }
+
+export default ForgotPassword

@@ -118,3 +118,5 @@ export function Account() {
     </div>
   )
 }
+
+export default Account

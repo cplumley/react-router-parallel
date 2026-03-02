@@ -1,6 +1,9 @@
 function getCsrfToken(): string {
   const meta = document.querySelector('meta[name="csrf-token"]')
-  return meta?.getAttribute("content") ?? ""
+  if (meta) return meta.getAttribute("content") ?? ""
+  // Fallback: read from cookie (for framework-mode SPA without Rails meta tags)
+  const match = document.cookie.match(/csrf_token=([^;]+)/)
+  return match ? decodeURIComponent(match[1]) : ""
 }
 
 export async function apiFetch(path: string, options: RequestInit = {}) {
