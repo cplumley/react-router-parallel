@@ -1,10 +1,5 @@
 import { createBrowserRouter } from "react-router"
 import { RootLayout } from "./layouts/root-layout"
-import { Home } from "./pages/home"
-import { SignIn } from "./pages/sign-in"
-import { SignUp } from "./pages/sign-up"
-import { ForgotPassword } from "./pages/forgot-password"
-import { Account } from "./pages/account"
 
 export function createRouter() {
   return createBrowserRouter([
@@ -12,11 +7,11 @@ export function createRouter() {
       path: "/",
       Component: RootLayout,
       children: [
-        { index: true, Component: Home },
-        { path: "sign-in", Component: SignIn },
-        { path: "sign-up", Component: SignUp },
-        { path: "forgot-password", Component: ForgotPassword },
-        { path: "account", Component: Account },
+        { index: true, lazy: () => import("./pages/home").then(m => ({ Component: m.default })) },
+        { path: "sign-in", lazy: () => import("./pages/sign-in").then(m => ({ Component: m.default })) },
+        { path: "sign-up", lazy: () => import("./pages/sign-up").then(m => ({ Component: m.default })) },
+        { path: "forgot-password", lazy: () => import("./pages/forgot-password").then(m => ({ Component: m.default })) },
+        { path: "account", lazy: () => import("./pages/account").then(m => ({ Component: m.default })) },
       ],
     },
   ])
