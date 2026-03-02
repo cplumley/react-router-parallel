@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lisbon</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= vite_client_tag %>
+    <%= vite_react_refresh_tag %>
+    <%= vite_javascript_tag 'application' %>
+  </head>
+  <body>
+    <%= tag.div(
+      id: "react-root",
+      data: { react_props: json_escape(server_rendered_props.to_json) }
+    ) %>
+    <noscript>
+      <p>This app requires JavaScript to run.</p>
+    </noscript>
+  </body>
+</html>

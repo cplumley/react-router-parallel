@@ -16,8 +16,11 @@ Rails.application.routes.draw do
     resource :account, only: [:show, :update]
   end
 
+  # Framework-mode SPA
   get "app",       to: "spa#index"
   get "app/*path", to: "spa#index"
 
-  root to: "home#index"
+  # Data-mode SPA (catch-all — must be last)
+  root to: "react_single_page_app#show"
+  get "*path", to: "react_single_page_app#show"
 end
