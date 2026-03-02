@@ -6,4 +6,9 @@ export default defineConfig(({ command }) => ({
   base: command === "build" ? "/app/" : undefined,
   plugins: [tailwindcss(), reactRouter()],
   cacheDir: "node_modules/.vite-rr",
+  server: {
+    proxy: {
+      "/api": "http://localhost:3000",
+    },
+  },
 }));

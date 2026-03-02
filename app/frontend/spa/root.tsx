@@ -29,9 +29,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export async function clientLoader() {
-  const res = await apiFetch("/api/session")
-  const data = await res.json()
-  return { user: data.id ? data : null }
+  try {
+    const res = await apiFetch("/api/session")
+    if (!res.ok) return { user: null }
+    const data = await res.json()
+    return { user: data.id ? data : null }
+  } catch {
+    return { user: null }
+  }
 }
 
 export default function Root({ loaderData }: Route.ComponentProps) {
