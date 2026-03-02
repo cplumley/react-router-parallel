@@ -40,6 +40,13 @@ node_modules
 # https://vitejs.dev/guide/env-and-mode.html#env-files
 *.local
 
+# React Router build output
+build/
+/public/app/
+
+# React Router types
+.react-router/
+
 # Playwright MCP
 .playwright-mcp/
 

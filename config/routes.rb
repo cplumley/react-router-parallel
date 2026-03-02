@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check
 
+  get "app",       to: "spa#index"
+  get "app/*path", to: "spa#index"
+
   root to: "home#index"
 end
