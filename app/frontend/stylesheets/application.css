@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@source "../../views/**/*.erb";
+
+@theme {
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Outfit', sans-serif;
+  --color-cream: #FDF6EC;
+  --color-cream-dark: #F5EBD8;
+  --color-terracotta: #C4633A;
+  --color-terracotta-light: #D8845F;
+  --color-terracotta-dark: #A14E2A;
+  --color-navy: #1B2E4A;
+  --color-navy-light: #2D4A6F;
+  --color-azure: #2E6B8A;
+  --color-azure-light: #3D8DB3;
+  --color-sand: #E8DCC8;
+  --color-sand-dark: #D4C5A9;
+  --color-stone: #8B7D6B;
+  --color-stone-light: #A89B88;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-navy);
+}
+
+/* Tile pattern background */
+.tile-pattern {
+  background-image:
+    radial-gradient(circle at 25% 25%, var(--color-sand) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, var(--color-sand) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Form elements */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-sand-dark);
+  border-radius: 0.5rem;
+  background: white;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-navy);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-terracotta);
+  box-shadow: 0 0 0 3px rgba(196, 99, 58, 0.15);
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 0.875rem 2rem;
+  background-color: var(--color-terracotta);
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  letter-spacing: 0.02em;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--color-terracotta-dark);
+  transform: translateY(-1px);
+}
+
+input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--color-navy);
+  margin-bottom: 0.375rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--color-terracotta);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+/* Azulejo-inspired decorative border */
+.azulejo-border {
+  border-image: repeating-linear-gradient(
+    90deg,
+    var(--color-terracotta) 0px,
+    var(--color-terracotta) 8px,
+    var(--color-azure) 8px,
+    var(--color-azure) 16px,
+    var(--color-terracotta-light) 16px,
+    var(--color-terracotta-light) 24px
+  ) 4;
+}

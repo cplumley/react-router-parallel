@@ -1,0 +1,15 @@
+<% if notice %>
+  <div class="max-w-6xl mx-auto px-6 mt-6 animate-fade-in">
+    <div class="bg-azure/10 border-l-4 border-azure text-navy px-5 py-4 rounded-r-lg" role="alert">
+      <p class="font-body text-sm"><%= notice %></p>
+    </div>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class="max-w-6xl mx-auto px-6 mt-6 animate-fade-in">
+    <div class="bg-terracotta/10 border-l-4 border-terracotta text-navy px-5 py-4 rounded-r-lg" role="alert">
+      <p class="font-body text-sm"><%= alert %></p>
+    </div>
+  </div>
+<% end %>

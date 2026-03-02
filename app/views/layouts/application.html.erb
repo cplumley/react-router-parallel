@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Lisbon" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag 'application' %>
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <%= render "shared/header" %>
+    <%= render "shared/flash" %>
+
+    <main class="flex-1">
+      <%= yield %>
+    </main>
+
+    <footer class="border-t-4 azulejo-border mt-auto">
+      <div class="max-w-6xl mx-auto px-6 py-8 text-center">
+        <p class="font-body text-stone text-sm tracking-wide">Built with Rails, Vite & warmth from Lisboa</p>
+      </div>
+    </footer>
+  </body>
+</html>

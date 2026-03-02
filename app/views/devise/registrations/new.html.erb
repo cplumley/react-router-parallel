@@ -1,0 +1,47 @@
+<div class="max-w-md mx-auto py-16 px-6 animate-fade-up">
+  <div class="bg-white rounded-2xl shadow-sm border border-sand p-8 md:p-10">
+    <h2 class="font-display text-3xl font-bold text-navy mb-2">Create an account</h2>
+    <p class="font-body text-stone mb-8">Get started in seconds</p>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="space-y-5">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, autofocus: true, placeholder: "First" %>
+          </div>
+          <div>
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, placeholder: "Last" %>
+          </div>
+        </div>
+
+        <div>
+          <%= f.label :email %>
+          <%= f.email_field :email, autocomplete: "email", placeholder: "you@example.com" %>
+        </div>
+
+        <div>
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+            <span class="text-xs text-stone font-normal normal-case tracking-normal ml-1">(<%= @minimum_password_length %> characters min)</span>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" %>
+        </div>
+
+        <div>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" %>
+        </div>
+
+        <div class="pt-2">
+          <%= f.submit "Create Account" %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
