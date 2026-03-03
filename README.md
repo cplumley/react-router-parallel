@@ -40,18 +40,18 @@ localhost:3000/api/*     → Rails JSON API (Devise-backed auth)
 
 <br />
 
-The two SPAs share components from `app/frontend/data-spa/`:
+The two SPAs share components from `app/frontend/data/`:
 
 ```
 app/frontend/
-├── data-spa/           # Shared: pages, layouts, auth, API helpers
+├── data/               # Shared: pages, layouts, auth, API helpers
 │   ├── layouts/        # Root layout (header, footer, auth guard)
 │   ├── pages/          # Home, sign-in, sign-up, forgot-password, account
 │   ├── lib/            # api.ts, auth-context.tsx
 │   └── routes.tsx      # Data-mode router (createBrowserRouter)
-├── spa/                # Framework-mode app directory
+├── framework/          # Framework-mode app directory
 │   ├── root.tsx        # HTML shell + clientLoader for auth
-│   └── routes.ts       # Route config (references data-spa/ components)
+│   └── routes.ts       # Route config (references data/ components)
 ├── entrypoints/
 │   └── application.tsx # Data-mode Vite entrypoint
 └── stylesheets/

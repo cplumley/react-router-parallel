@@ -1,5 +1,5 @@
 import "../stylesheets/application.css"
-import { mount } from "../data-spa/app"
+import { mount } from "../data/app"
 
 function mountReactRoot() {
   const reactRoot = document.getElementById("react-root")

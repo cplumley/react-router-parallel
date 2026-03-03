@@ -6,8 +6,8 @@ import {
   ScrollRestoration,
 } from "react-router"
 import type { Route } from "./+types/root"
-import { AuthProvider } from "../data-spa/lib/auth-context"
-import { apiFetch } from "../data-spa/lib/api"
+import { AuthProvider } from "../data/lib/auth-context"
+import { apiFetch } from "../data/lib/api"
 import "../stylesheets/application.css"
 
 export function Layout({ children }: { children: React.ReactNode }) {

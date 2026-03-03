@@ -1,5 +1,5 @@
 {
-  "include": ["app/frontend/spa/**/*", "react-router.config.ts", "vite.config.rr.ts"],
+  "include": ["app/frontend/framework/**/*", "react-router.config.ts", "vite.config.rr.ts"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "types": ["vite/client"],
