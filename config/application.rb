@@ -6,6 +6,8 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+require_relative "../lib/middleware/spa_assets"
+
 module Lisbon
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -15,6 +17,11 @@ module Lisbon
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
+
+    # Serve framework-mode SPA build assets at /app/assets/
+    config.middleware.insert_before ActionDispatch::Static, SpaAssets,
+      root: Rails.root.join("build", "client").to_s,
+      prefix: "/app"
 
     # Configuration for the application, engines, and railties goes here.
     #

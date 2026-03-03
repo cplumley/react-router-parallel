@@ -2,7 +2,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev:spa": "react-router dev --config vite.config.rr.ts",
     "build:spa": "react-router build --config vite.config.rr.ts"
   },
   "devDependencies": {

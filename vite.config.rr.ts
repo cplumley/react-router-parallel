@@ -2,13 +2,9 @@ import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 
-export default defineConfig(({ command }) => ({
-  base: command === "build" ? "/app/" : undefined,
+export default defineConfig({
+  base: "/app/",
+  publicDir: false,
   plugins: [tailwindcss(), reactRouter()],
   cacheDir: "node_modules/.vite-rr",
-  server: {
-    proxy: {
-      "/api": "http://localhost:3000",
-    },
-  },
-}));
+});

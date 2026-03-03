@@ -4,4 +4,5 @@ export default {
   ssr: false,
   appDirectory: "app/frontend/spa",
   basename: "/app",
+  buildDirectory: "build",
 } satisfies Config;
