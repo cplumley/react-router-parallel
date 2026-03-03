@@ -8,7 +8,7 @@ class Api::BaseController < ApplicationController
   def set_csrf_cookie
     cookies["csrf_token"] = {
       value: form_authenticity_token,
-      same_site: :lax,
+      same_site: :lax
     }
   end
 
@@ -22,7 +22,7 @@ class Api::BaseController < ApplicationController
       email: user.email,
       first_name: user.first_name,
       last_name: user.last_name,
-      name: user.name.to_s,
+      name: user.name.to_s
     }
   end
 end

@@ -14,7 +14,7 @@ class SpaAssets
       status, headers, body = @file_server.call(env)
       env[Rack::PATH_INFO] = path
 
-      return [status, headers, body] unless status == 404
+      return [ status, headers, body ] unless status == 404
     end
 
     @app.call(env)

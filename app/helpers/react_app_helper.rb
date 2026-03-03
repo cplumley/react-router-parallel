@@ -6,12 +6,12 @@ module ReactAppHelper
         email: current_user.email,
         first_name: current_user.first_name,
         last_name: current_user.last_name,
-        name: current_user.name.to_s,
+        name: current_user.name.to_s
       } : nil,
       flash: {
         notice: flash[:notice],
-        alert: flash[:alert],
-      },
+        alert: flash[:alert]
+      }
     }
   end
 end
