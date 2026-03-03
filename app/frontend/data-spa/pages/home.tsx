@@ -1,7 +1,7 @@
 import { Link } from "react-router"
 import { useAuth } from "../lib/auth-context"
 
-export function Home() {
+export default function Home() {
   const { user } = useAuth()
 
   return (
@@ -11,7 +11,7 @@ export function Home() {
           <div className="max-w-2xl animate-fade-up">
             <p className="font-body text-terracotta font-semibold text-sm tracking-widest uppercase mb-4">Welcome</p>
             <h1 className="font-display text-5xl md:text-7xl font-bold text-navy leading-[1.1] mb-6">
-              Explore.<br />
+              Hello.<br />
               <span className="text-terracotta italic">Build.</span><br />
               Ship.
             </h1>
@@ -71,5 +71,3 @@ export function Home() {
     </>
   )
 }
-
-export default Home
